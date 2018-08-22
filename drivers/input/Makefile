@@ -31,3 +31,5 @@ obj-$(CONFIG_SENSORS_HALL)	+= hall_sensor.o
 
 obj-y  += sensors/
 
+obj-y  += sensors/
+

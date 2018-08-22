@@ -5,6 +5,7 @@
 # Each configuration option enables a list of files.
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 obj-$(CONFIG_INPUT_88PM860X_ONKEY)	+= 88pm860x_onkey.o
 obj-$(CONFIG_INPUT_88PM80X_ONKEY)	+= 88pm80x_onkey.o
 obj-$(CONFIG_INPUT_AB8500_PONKEY)	+= ab8500-ponkey.o
@@ -99,6 +100,9 @@ ifeq ($(CONFIG_SENSORS_BMA2X2_ENABLE_INT2),y)
 	EXTRA_CFLAGS += -DBMA2X2_ENABLE_INT2
 =======
 obj-$(CONFIG_INPUT_UINPUT)		+= uinput.o
+=======
+obj-$(CONFIG_INPUT_UINPUT)		+= uinput.o
+>>>>>>> 9b5e505... Import asus sensor drivers.
 #obj-$(CONFIG_INPUT_WISTRON_BTNS)	+= wistron_btns.o
 #obj-$(CONFIG_INPUT_WM831X_ON)		+= wm831x-on.o
 #obj-$(CONFIG_INPUT_XEN_KBDDEV_FRONTEND)	+= xen-kbdfront.o
@@ -121,13 +125,17 @@ obj-$(CONFIG_INPUT_UINPUT)		+= uinput.o
 ifeq ($(CONFIG_ASUS_ZC550KL_PROJECT),y)
 obj-y +=  kxtj9_zc550kl.o
 obj-y +=  bma2x2_zc550kl.o
+<<<<<<< HEAD
 >>>>>>> 9b5e505... Import asus sensor drivers.
 endif
 #--- ASUS_BSP alian_Shen "Add GSensor for ZC550KL"
 
 ifeq ($(CONFIG_SENSORS_BMA2X2_ENABLE_IDENT),y)
 	EXTRA_CFLAGS += -DBMA2X2_SENSOR_IDENTIFICATION_ENABLE
+=======
+>>>>>>> 9b5e505... Import asus sensor drivers.
 endif
+#--- ASUS_BSP alian_Shen "Add GSensor for ZC550KL"
 
 obj-$(CONFIG_SENSORS_BMI160) += bmi160_driver.o bmi160.o
 ifeq ($(CONFIG_BMI160_MAG_INTERFACE_SUPPORT),y)
