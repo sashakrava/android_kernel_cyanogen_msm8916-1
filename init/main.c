@@ -373,6 +373,9 @@ __setup("androidboot.mode=", set_boot_mode);
 //--- ASUS_BSP : Younger
 
 
+<<<<<<< HEAD
+>>>>>>> 619414e5... Import ASUS ZC550KL camera drivers
+=======
 >>>>>>> 619414e5... Import ASUS ZC550KL camera drivers
 /*
  * If set, this is an indication to the drivers that reset the underlying
