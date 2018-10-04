@@ -251,7 +251,25 @@ static struct notifier_block wnb = {
 	.notifier_call = wcnss_notif_cb,
 };
 
+<<<<<<< HEAD
 #define NVBIN_FILE "wlan/prima/WCNSS_qcom_wlan_nv.bin"
+=======
+#ifdef CONFIG_ASUS_ZC550KL_PROJECT
+#define NVBIN_FILE "wlan/prima/WCNSS_qcom_wlan_nv.bin"
+#else
+static char *kernel_nvbin_ptr = NULL;
+#define WCNSS_ZE550KL_WLAN_NV_FILE               "wlan/prima/WCNSS_qcom_wlan_nv_ze550kl.bin"
+#define WCNSS_ZE550KL_CMCC_WLAN_NV_FILE          "wlan/prima/WCNSS_qcom_wlan_nv_ze550kl_cmcc.bin"
+#define WCNSS_ZE600KL_WLAN_NV_FILE               "wlan/prima/WCNSS_qcom_wlan_nv_ze600kl.bin"	//<asus-kevin>150325+
+#define WCNSS_ZX550KL_WLAN_NV_FILE               "wlan/prima/WCNSS_qcom_wlan_nv_zx550kl.bin"
+#define WCNSS_ZD550KL_CUCC_WLAN_NV_FILE          "wlan/prima/WCNSS_qcom_wlan_nv_cucc_zd550kl.bin"
+#define WCNSS_ZD550KL_CMCC_WLAN_NV_FILE           "wlan/prima/WCNSS_qcom_wlan_nv_cmcc_zd550kl.bin"
+#define WCNSS_ZE550KG_WLAN_NV_FILE		     "wlan/prima/WCNSS_qcom_wlan_nv_ze550kg.bin"
+#define WCNSS_ZE551KL_WLAN_NV_FILE               "wlan/prima/WCNSS_qcom_wlan_nv_ze551kl.bin"
+
+#define NVBIN_FILE              kernel_nvbin_ptr 
+#endif
+>>>>>>> ab6a9ba... import wifi and bt related changes for ZC550KL
 
 /* On SMD channel 4K of maximum data can be transferred, including message
  * header, so NV fragment size as next multiple of 1Kb is 3Kb.
@@ -2332,13 +2350,51 @@ static void wcnss_nvbin_dnld(void)
 	struct device *dev = &penv->pdev->dev;
 
 	down_read(&wcnss_pm_sem);
+#ifdef CONFIG_ASUS_ZC550KL_PROJECT
+	pr_info("NVBIN_FILE is %s\n",NVBIN_FILE);
+	ret = request_firmware(&nv, NVBIN_FILE, dev);
 
+<<<<<<< HEAD
+=======
+	if (ret || !nv || !nv->data || !nv->size) {
+		pr_err("wcnss: %s: request_firmware failed for %s (ret = %d)\n",
+			__func__, NVBIN_FILE, ret);
+		goto out;
+#else
+	/* ze550kl and ze550kg have the same project id, but ze550kg only have 3G sku, and others belongs to ze550kl */
+	if( ASUS_ZE550KL == asus_PRJ_ID ){
+		/* RF SKU US:2 3G:3 TW:4 WW:5 CUCC:6 CMCC:7 */
+		if( 0 == strncmp(asus_project_RFsku, "3", 2))
+			NVBIN_FILE = WCNSS_ZE550KG_WLAN_NV_FILE;
+		else if( 0 == strncmp(asus_project_RFsku, "7", 2))
+			NVBIN_FILE = WCNSS_ZE550KL_CMCC_WLAN_NV_FILE;
+		/*ze551kl_US is LTE and FHD*/
+		else if((0 == strncmp(asus_project_lte, "1", 2))&&(0 == strncmp(asus_project_hd, "0", 2))&&( 0 == strncmp(asus_project_RFsku, "2", 2)))
+			NVBIN_FILE = WCNSS_ZE551KL_WLAN_NV_FILE;
+		else
+		 	NVBIN_FILE = WCNSS_ZE550KL_WLAN_NV_FILE;
+	}
+	else if( ASUS_ZE600KL == asus_PRJ_ID )
+		 	NVBIN_FILE = WCNSS_ZE600KL_WLAN_NV_FILE;
+
+	else if( ASUS_ZX550KL == asus_PRJ_ID )
+		NVBIN_FILE = WCNSS_ZX550KL_WLAN_NV_FILE;
+
+	else if( ASUS_ZD550KL == asus_PRJ_ID) {
+	    if( 0 == strncmp(asus_project_RFsku, "7", 2))
+		NVBIN_FILE = WCNSS_ZD550KL_CMCC_WLAN_NV_FILE;
+	    else
+		NVBIN_FILE = WCNSS_ZD550KL_CUCC_WLAN_NV_FILE;
+	}
+	pr_info("NVBIN_FILE is %s\n",NVBIN_FILE);
+>>>>>>> ab6a9ba... import wifi and bt related changes for ZC550KL
 	ret = request_firmware(&nv, NVBIN_FILE, dev);
 
 	if (ret || !nv || !nv->data || !nv->size) {
 		pr_err("wcnss: %s: request_firmware failed for %s (ret = %d)\n",
 			__func__, NVBIN_FILE, ret);
 		goto out;
+#endif
 	}
 
 	/* First 4 bytes in nv blob is validity bitmap.
@@ -2400,11 +2456,7 @@ static void wcnss_nvbin_dnld(void)
 
 		retry_count = 0;
 		while ((ret == -ENOSPC) && (retry_count <= 3)) {
-			pr_debug("wcnss: %s: smd tx failed, ENOSPC\n",
-				__func__);
-			pr_debug("fragment: %d, len: %d, TotFragments: %d, retry_count: %d\n",
-				count, dnld_req_msg->hdr.msg_len,
-				total_fragments, retry_count);
+			pr_info("[wcnss]: wcnss_nvbin_dnld_req, smd tx retry_count=%d, (%d, %d, %d).\n", retry_count, count, dnld_req_msg->hdr.msg_len, total_fragments);
 
 			/* wait and try again */
 			msleep(20);
