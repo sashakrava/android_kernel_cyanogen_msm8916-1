@@ -252,8 +252,11 @@ static struct notifier_block wnb = {
 };
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #define NVBIN_FILE "wlan/prima/WCNSS_qcom_wlan_nv.bin"
 =======
+=======
+>>>>>>> ab6a9ba... import wifi and bt related changes for ZC550KL
 #ifdef CONFIG_ASUS_ZC550KL_PROJECT
 #define NVBIN_FILE "wlan/prima/WCNSS_qcom_wlan_nv.bin"
 #else
@@ -269,6 +272,9 @@ static char *kernel_nvbin_ptr = NULL;
 
 #define NVBIN_FILE              kernel_nvbin_ptr 
 #endif
+<<<<<<< HEAD
+>>>>>>> ab6a9ba... import wifi and bt related changes for ZC550KL
+=======
 >>>>>>> ab6a9ba... import wifi and bt related changes for ZC550KL
 
 /* On SMD channel 4K of maximum data can be transferred, including message
@@ -2355,7 +2361,10 @@ static void wcnss_nvbin_dnld(void)
 	ret = request_firmware(&nv, NVBIN_FILE, dev);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> ab6a9ba... import wifi and bt related changes for ZC550KL
 	if (ret || !nv || !nv->data || !nv->size) {
 		pr_err("wcnss: %s: request_firmware failed for %s (ret = %d)\n",
 			__func__, NVBIN_FILE, ret);
