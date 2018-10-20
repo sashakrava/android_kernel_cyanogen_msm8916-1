@@ -15,6 +15,7 @@ endif
 
 ifeq ($(KERNEL_BUILD), 0)
 <<<<<<< HEAD
+<<<<<<< HEAD
 # These are configurable via Kconfig for kernel-based builds
 # Need to explicitly configure for Android-based builds
 
@@ -60,6 +61,8 @@ CONFIG_WLAN_FEATURE_AP_FIND := y
 # Flag to enable feature Software AP Authentication Offload
 SAP_AUTH_OFFLOAD := y
 =======
+=======
+>>>>>>> 9ab0520... staging/prima: Import ZC550KL wifi drivers
 	# These are configurable via Kconfig for kernel-based builds
 	# Need to explicitly configure for Android-based builds
 
@@ -90,6 +93,9 @@ SAP_AUTH_OFFLOAD := y
 	CONFIG_ENABLE_LINUX_REG := y
 
 endif
+<<<<<<< HEAD
+>>>>>>> 9ab0520... staging/prima: Import ZC550KL wifi drivers
+=======
 >>>>>>> 9ab0520... staging/prima: Import ZC550KL wifi drivers
 
 # To enable CONFIG_QCOM_ESE_UPLOAD, dependent config
@@ -182,7 +188,10 @@ HDD_OBJS := 	$(HDD_SRC_DIR)/bap_hdd_main.o \
 		$(HDD_SRC_DIR)/wlan_hdd_mib.o \
 		$(HDD_SRC_DIR)/wlan_hdd_oemdata.o \
 <<<<<<< HEAD
+<<<<<<< HEAD
 		$(HDD_SRC_DIR)/wlan_hdd_request_manager.o \
+=======
+>>>>>>> 9ab0520... staging/prima: Import ZC550KL wifi drivers
 =======
 >>>>>>> 9ab0520... staging/prima: Import ZC550KL wifi drivers
 		$(HDD_SRC_DIR)/wlan_hdd_scan.o \
@@ -248,7 +257,10 @@ MAC_LIM_OBJS := $(MAC_SRC_DIR)/pe/lim/limAIDmgmt.o \
 		$(MAC_SRC_DIR)/pe/lim/limProcessSmeReqMessages.o \
 		$(MAC_SRC_DIR)/pe/lim/limPropExtsUtils.o \
 <<<<<<< HEAD
+<<<<<<< HEAD
 		$(MAC_SRC_DIR)/pe/lim/limRMC.o \
+=======
+>>>>>>> 9ab0520... staging/prima: Import ZC550KL wifi drivers
 =======
 >>>>>>> 9ab0520... staging/prima: Import ZC550KL wifi drivers
 		$(MAC_SRC_DIR)/pe/lim/limRoamingAlgo.o \
@@ -277,10 +289,13 @@ MAC_LIM_OBJS += $(MAC_SRC_DIR)/pe/lim/limProcessTdls.o
 endif
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 ifeq ($(CONFIG_PRIMA_WLAN_LFR_MBB),y)
 MAC_LIM_OBJS += $(MAC_SRC_DIR)/pe/lim/lim_mbb.o
 endif
 
+=======
+>>>>>>> 9ab0520... staging/prima: Import ZC550KL wifi drivers
 =======
 >>>>>>> 9ab0520... staging/prima: Import ZC550KL wifi drivers
 MAC_PMM_OBJS := $(MAC_SRC_DIR)/pe/pmm/pmmAP.o \
@@ -345,10 +360,13 @@ SME_CSR_OBJS += $(SME_SRC_DIR)/csr/csrTdlsProcess.o
 endif
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 ifeq ($(CONFIG_PRIMA_WLAN_LFR_MBB),y)
 SME_CSR_OBJS += $(SME_SRC_DIR)/csr/csr_roam_mbb.o
 endif
 
+=======
+>>>>>>> 9ab0520... staging/prima: Import ZC550KL wifi drivers
 =======
 >>>>>>> 9ab0520... staging/prima: Import ZC550KL wifi drivers
 SME_PMC_OBJS := $(SME_SRC_DIR)/pmc/pmcApi.o \
@@ -617,7 +635,10 @@ CDEFINES :=	-DANI_BUS_TYPE_PLATFORM=1 \
 		-DWLAN_WAKEUP_EVENTS \
 	        -DWLAN_KD_READY_NOTIFIER \
 <<<<<<< HEAD
+<<<<<<< HEAD
 		-DWLAN_FEATURE_RMC \
+=======
+>>>>>>> 9ab0520... staging/prima: Import ZC550KL wifi drivers
 =======
 >>>>>>> 9ab0520... staging/prima: Import ZC550KL wifi drivers
 		-DWLAN_NL80211_TESTMODE \
@@ -631,11 +652,15 @@ CDEFINES :=	-DANI_BUS_TYPE_PLATFORM=1 \
                 -DWLAN_LOGGING_SOCK_SVC_ENABLE \
                 -DWLAN_FEATURE_LINK_LAYER_STATS \
 <<<<<<< HEAD
+<<<<<<< HEAD
                 -DWLAN_FEATURE_EXTSCAN \
                 -DFEATURE_EXT_LL_STAT \
                 -DWLAN_VOWIFI_DEBUG \
 		-DDHCP_SERVER_OFFLOAD \
 		-DWLAN_FEATURE_TSF
+=======
+                -DWLAN_FEATURE_EXTSCAN
+>>>>>>> 9ab0520... staging/prima: Import ZC550KL wifi drivers
 =======
                 -DWLAN_FEATURE_EXTSCAN
 >>>>>>> 9ab0520... staging/prima: Import ZC550KL wifi drivers
@@ -653,7 +678,10 @@ CDEFINES +=	-DWLAN_DEBUG \
 		-DPE_DEBUG_LOGW \
 		-DPE_DEBUG_LOGE \
 <<<<<<< HEAD
+<<<<<<< HEAD
                 -DDXE_TRACE \
+=======
+>>>>>>> 9ab0520... staging/prima: Import ZC550KL wifi drivers
 =======
 >>>>>>> 9ab0520... staging/prima: Import ZC550KL wifi drivers
 		-DDEBUG
@@ -695,10 +723,13 @@ CDEFINES += -DFEATURE_WLAN_LFR
 endif
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 ifeq ($(CONFIG_PRIMA_WLAN_LFR_MBB),y)
 CDEFINES += -DWLAN_FEATURE_LFR_MBB
 endif
 
+=======
+>>>>>>> 9ab0520... staging/prima: Import ZC550KL wifi drivers
 =======
 >>>>>>> 9ab0520... staging/prima: Import ZC550KL wifi drivers
 ifeq ($(CONFIG_PRIMA_WLAN_OKC),y)
@@ -743,6 +774,7 @@ CDEFINES += -DCONFIG_ENABLE_LINUX_REG
 endif
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 # Enable feature SAP Authentication Offload
 ifeq ($(SAP_AUTH_OFFLOAD), y)
 CDEFINES += -DSAP_AUTH_OFFLOAD
@@ -752,6 +784,8 @@ ifeq ($(CONFIG_WLAN_FEATURE_AP_FIND), y)
 CDEFINES += -DWLAN_FEATURE_APFIND
 endif
 
+=======
+>>>>>>> 9ab0520... staging/prima: Import ZC550KL wifi drivers
 =======
 >>>>>>> 9ab0520... staging/prima: Import ZC550KL wifi drivers
 CDEFINES += -DFEATURE_WLAN_CH_AVOID
@@ -772,6 +806,7 @@ endif
 EXTRA_CFLAGS += -Wno-maybe-uninitialized -Wno-unused-function -Wno-unused-variable
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 ifeq ($(CONFIG_WLAN_OFFLOAD_PACKETS),y)
 CDEFINES += -DWLAN_FEATURE_OFFLOAD_PACKETS
 endif
@@ -780,6 +815,8 @@ ifeq ($(CONFIG_MDNS_OFFLOAD_SUPPORT), y)
 CDEFINES += -DMDNS_OFFLOAD
 endif
 
+=======
+>>>>>>> 9ab0520... staging/prima: Import ZC550KL wifi drivers
 =======
 >>>>>>> 9ab0520... staging/prima: Import ZC550KL wifi drivers
 KBUILD_CPPFLAGS += $(CDEFINES)

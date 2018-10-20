@@ -15,6 +15,9 @@ clean::
 	rm -rf .tmp_versions
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+>>>>>>> 9ab0520... staging/prima: Import ZC550KL wifi drivers
 =======
 >>>>>>> 9ab0520... staging/prima: Import ZC550KL wifi drivers

@@ -1149,6 +1149,7 @@ VOS_STATUS wlan_hdd_get_rssi(hdd_adapter_t *pAdapter, v_S7_t *rssi_value)
    }
 
    *rssi_value = pAdapter->rssi;
+<<<<<<< HEAD
 
    /*
     * either we never sent a request, we sent a request and received a
@@ -1156,6 +1157,8 @@ VOS_STATUS wlan_hdd_get_rssi(hdd_adapter_t *pAdapter, v_S7_t *rssi_value)
     * done with the request.
     */
     hdd_request_put(request);
+=======
+>>>>>>> 9ab0520... staging/prima: Import ZC550KL wifi drivers
 
    return VOS_STATUS_SUCCESS;
 }
@@ -3714,6 +3717,9 @@ VOS_STATUS  wlan_hdd_get_station_stats(hdd_adapter_t *pAdapter)
 =======
    long lrc;
    struct statsContext context;
+<<<<<<< HEAD
+>>>>>>> 9ab0520... staging/prima: Import ZC550KL wifi drivers
+=======
 >>>>>>> 9ab0520... staging/prima: Import ZC550KL wifi drivers
 
    if (NULL == pAdapter)
@@ -3722,6 +3728,7 @@ VOS_STATUS  wlan_hdd_get_station_stats(hdd_adapter_t *pAdapter)
        return VOS_STATUS_SUCCESS;
    }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
    if (pAdapter->device_mode == WLAN_HDD_SOFTAP) {
        sap_ctx = WLAN_HDD_GET_AP_CTX_PTR(pAdapter);
@@ -3738,6 +3745,8 @@ VOS_STATUS  wlan_hdd_get_station_stats(hdd_adapter_t *pAdapter)
    }
    cookie = hdd_request_cookie(request);
 =======
+=======
+>>>>>>> 9ab0520... staging/prima: Import ZC550KL wifi drivers
    /* we are connected
    prepare our callback context */
    init_completion(&context.completion);
@@ -3755,9 +3764,12 @@ VOS_STATUS  wlan_hdd_get_station_stats(hdd_adapter_t *pAdapter)
                                0, // not periodic
                                FALSE, //non-cached results
 <<<<<<< HEAD
+<<<<<<< HEAD
                                sta_id,
                                cookie);
 =======
+=======
+>>>>>>> 9ab0520... staging/prima: Import ZC550KL wifi drivers
                                pHddStaCtx->conn_info.staId[0],
                                &context);
 >>>>>>> 9ab0520... staging/prima: Import ZC550KL wifi drivers

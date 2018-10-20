@@ -1,6 +1,10 @@
 /*
 <<<<<<< HEAD
+<<<<<<< HEAD
  * Copyright (c) 2012-2018 The Linux Foundation. All rights reserved.
+=======
+ * Copyright (c) 2012-2015 The Linux Foundation. All rights reserved.
+>>>>>>> 9ab0520... staging/prima: Import ZC550KL wifi drivers
 =======
  * Copyright (c) 2012-2015 The Linux Foundation. All rights reserved.
 >>>>>>> 9ab0520... staging/prima: Import ZC550KL wifi drivers

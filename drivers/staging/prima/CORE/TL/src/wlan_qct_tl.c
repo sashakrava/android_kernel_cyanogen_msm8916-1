@@ -13836,6 +13836,7 @@ void WLANTL_ResetRxSSN(v_PVOID_t pvosGCtx, uint8_t ucSTAId)
  * Return: void
  */
 void WLANTL_SetARPFWDatapath(void * pvosGCtx, bool flag)
+<<<<<<< HEAD
 {
 
    WLANTL_CbType*  pTLCb = NULL;
@@ -13872,6 +13873,8 @@ v_U16_t wlan_tl_get_sta_rx_rate(void *pvosGCtx, uint8_t ucSTAId)
 }
 
 void WLANTL_GetSAPStaRSSi(void *pvosGCtx, uint8_t ucSTAId, s8 *rssi)
+=======
+>>>>>>> 9ab0520... staging/prima: Import ZC550KL wifi drivers
 {
    WLANTL_CbType*  pTLCb = NULL;
    uint8_t count;
@@ -13920,6 +13923,7 @@ VOS_STATUS WLANTL_RmcInit
     return status;
 }
 
+<<<<<<< HEAD
 >>>>>>> 9ab0520... staging/prima: Import ZC550KL wifi drivers
 
 void WLANTL_SetKeySeqCounter(void *pvosGCtx, u64 counter, uint8_t staid)
@@ -13980,6 +13984,8 @@ VOS_STATUS WLANTL_RmcInit
 
     return status;
 }
+=======
+>>>>>>> 9ab0520... staging/prima: Import ZC550KL wifi drivers
 
 
 VOS_STATUS WLANTL_RmcDeInit

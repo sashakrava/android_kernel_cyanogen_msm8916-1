@@ -9643,10 +9643,17 @@ static int wlan_hdd_cfg80211_set_channel( struct wiphy *wiphy,
     vos_ssr_protect(__func__);
     ret = __wlan_hdd_cfg80211_set_channel(wiphy, dev, chan, channel_type);
     vos_ssr_unprotect(__func__);
+<<<<<<< HEAD
 
     return ret;
 }
 
+=======
+
+    return ret;
+}
+
+>>>>>>> 9ab0520... staging/prima: Import ZC550KL wifi drivers
 #if (LINUX_VERSION_CODE < KERNEL_VERSION(3,4,0))
 static int wlan_hdd_cfg80211_start_bss(hdd_adapter_t *pHostapdAdapter,
                             struct beacon_parameters *params)
@@ -11771,8 +11778,11 @@ static int __wlan_hdd_cfg80211_add_key( struct wiphy *wiphy,
     hddLog(VOS_TRACE_LEVEL_INFO,
            "%s: called with key index = %d & key length %d",
            __func__, key_index, params->key_len);
+<<<<<<< HEAD
 
     peerMacAddr = (v_MACADDR_t *)mac_addr;
+=======
+>>>>>>> 9ab0520... staging/prima: Import ZC550KL wifi drivers
 
     /*extract key idx, key len and key*/
     vos_mem_zero(&setKey,sizeof(tCsrRoamSetKey));

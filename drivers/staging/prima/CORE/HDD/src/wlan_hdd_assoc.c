@@ -4700,6 +4700,7 @@ int __iw_set_essid(struct net_device *dev,
         return -EINVAL;
     pRoamProfile = &pWextState->roamProfile;
     if (pRoamProfile)
+<<<<<<< HEAD
     {
         if ( hdd_connGetConnectedBssType( pHddStaCtx, &connectedBssType ) ||
              ( eMib_dot11DesiredBssType_independent == pHddStaCtx->conn_info.connDot11DesiredBssType ))
@@ -4717,6 +4718,25 @@ int __iw_set_essid(struct net_device *dev,
     /** wpa_supplicant 0.8.x, wext driver uses */
     else
     {
+=======
+    {
+        if ( hdd_connGetConnectedBssType( pHddStaCtx, &connectedBssType ) ||
+             ( eMib_dot11DesiredBssType_independent == pHddStaCtx->conn_info.connDot11DesiredBssType ))
+        {
+            VOS_STATUS vosStatus;
+            // need to issue a disconnect to CSR.
+            INIT_COMPLETION(pAdapter->disconnect_comp_var);
+            vosStatus = sme_RoamDisconnect( hHal, pAdapter->sessionId, eCSR_DISCONNECT_REASON_UNSPECIFIED );
+
+            if(VOS_STATUS_SUCCESS == vosStatus)
+               wait_for_completion_interruptible_timeout(&pAdapter->disconnect_comp_var,
+                     msecs_to_jiffies(WLAN_WAIT_TIME_DISCONNECT));
+        }
+    }
+    /** wpa_supplicant 0.8.x, wext driver uses */
+    else
+    {
+>>>>>>> 9ab0520... staging/prima: Import ZC550KL wifi drivers
         return -EINVAL;
     }
     /** wpa_supplicant 0.8.x, wext driver uses */

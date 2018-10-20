@@ -3386,6 +3386,7 @@ void WLANTL_SetDataPktFilter(v_PVOID_t pvosGCtx, uint8_t ucSTAId, bool flag);
  */
 void WLANTL_SetARPFWDatapath(void * pvosGCtx, bool flag);
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 /**
  * WLANTL_GetSAPStaRSSi() - get RSSI for the SAP client
@@ -3415,6 +3416,8 @@ v_U16_t wlan_tl_get_sta_rx_rate(void* pvosGCtx, uint8_t ucSTAId);
  * Return: void
  */
 void WLANTL_SetKeySeqCounter(void *pvosGCtx, u64 counter, uint8_t staid);
+=======
+>>>>>>> 9ab0520... staging/prima: Import ZC550KL wifi drivers
 =======
 >>>>>>> 9ab0520... staging/prima: Import ZC550KL wifi drivers
 #endif /* #ifndef WLAN_QCT_WLANTL_H */
