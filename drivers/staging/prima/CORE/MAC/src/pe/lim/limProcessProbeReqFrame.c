@@ -1,5 +1,9 @@
 /*
+<<<<<<< HEAD
  * Copyright (c) 2012-2018 The Linux Foundation. All rights reserved.
+=======
+ * Copyright (c) 2012-2015 The Linux Foundation. All rights reserved.
+>>>>>>> 9ab0520... staging/prima: Import ZC550KL wifi drivers
  *
  * Previously licensed under the ISC license by Qualcomm Atheros, Inc.
  *
@@ -669,7 +673,7 @@ limIndicateProbeReqToHDD(tpAniSirGlobal pMac, tANI_U8 *pBd,
 
     //send the probe req to SME.
     limSendSmeMgmtFrameInd( pMac, psessionEntry->smeSessionId, pBd,
-                            psessionEntry, WDA_GET_RX_RSSI_DB(pBd));
+                            psessionEntry, 0);
 #ifdef WLAN_FEATURE_P2P_INTERNAL
     limSendP2PProbeResponse(pMac, pBd, psessionEntry);
 #endif

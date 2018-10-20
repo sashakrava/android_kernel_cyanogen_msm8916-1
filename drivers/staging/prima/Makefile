@@ -14,4 +14,7 @@ clean::
 	rm -f *.o *.ko *.mod.c *.mod.o *~ .*.cmd Module.symvers
 	rm -rf .tmp_versions
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 9ab0520... staging/prima: Import ZC550KL wifi drivers
