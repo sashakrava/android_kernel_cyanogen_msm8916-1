@@ -58,14 +58,20 @@ obj-$(CONFIG_LEDS_LM355x)		+= leds-lm355x.o
 obj-$(CONFIG_LEDS_BLINKM)		+= leds-blinkm.o
 obj-$(CONFIG_LEDS_MSM_GPIO_FLASH)	+= leds-msm-gpio-flash.o
 <<<<<<< HEAD
+<<<<<<< HEAD
 obj-$(CONFIG_LEDS_MSM_GPIO_FLASH_CKT)	+= leds-msm-gpio-flash-ckt.o
 =======
+=======
+>>>>>>> fbf8835... import ZC550KL Led drivers
 ifeq ($(CONFIG_ASUS_ZC550KL_PROJECT),y)
 obj-$(CONFIG_LEDS_AW2013)		+= leds-aw2013_zc550kl.o
 ifdef CONFIG_DEBUG_FS
 obj-$(CONFIG_LEDS_AW2013)		+= i2c-dev-dbgfs.o
 endif
 else
+<<<<<<< HEAD
+>>>>>>> fbf8835... import ZC550KL Led drivers
+=======
 >>>>>>> fbf8835... import ZC550KL Led drivers
 obj-$(CONFIG_LEDS_AW2013)		+= leds-aw2013.o
 endif
