@@ -44,6 +44,7 @@
 #define DRV_NAME "msm8x16-asoc-wcd"
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef CONFIG_MACH_T86519A1
 #define MSM_VEGAS_FLL_CLK_SOURCE ARIZONA_FLL_SRC_MCLK1
 #define MSM_VEGAS_FLL_CLK_FREQ ( 48000 * 512 * 2 )
@@ -51,11 +52,16 @@
 static struct snd_soc_codec *wm8998;
 static int previous_bias_level = SND_SOC_BIAS_OFF;
 =======
+=======
+>>>>>>> ec82cb5... Import ZC550KL sound drivers
 #ifdef CONFIG_ASUS_ZC550KL_PROJECT
 //mei_huang +++ config speaker
 int ext_spk_amp_gpio = -1;
 int speaker_run = 0;
 //mei_huang ---
+<<<<<<< HEAD
+>>>>>>> ec82cb5... Import ZC550KL sound drivers
+=======
 >>>>>>> ec82cb5... Import ZC550KL sound drivers
 #endif
 
@@ -305,11 +311,14 @@ struct cdc_pdm_pinctrl_info {
 	struct pinctrl_state *cross_conn_det_sus;
 	struct pinctrl_state *cross_conn_det_act;
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifdef CONFIG_MACH_CP8675
 	struct pinctrl_state *cdc_lines_dmic_act;
 	struct pinctrl_state *cdc_lines_dmic_sus;
 #endif
 =======
+=======
+>>>>>>> ec82cb5... Import ZC550KL sound drivers
 	#ifdef CONFIG_ASUS_ZC550KL_PROJECT
 	struct pinctrl_state *spk_amp_sus;//mei_huang +++ config speaker
 	struct pinctrl_state *spk_amp_act;//mei_huang +++ config speaker
@@ -3317,11 +3326,14 @@ static int msm8x16_setup_hs_jack(struct platform_device *pdev,
 {
 	struct pinctrl *pinctrl;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 #ifdef CONFIG_MACH_JALEBI
 	msm8x16_ext_spk_pa_init(pdev, pdata);
 #endif
 =======
+=======
+>>>>>>> ec82cb5... Import ZC550KL sound drivers
 	#ifndef CONFIG_ASUS_ZC550KL_PROJECT
 	/* ASUS_BSP Paul +++ */
 	// g_gpio_audio_debug = of_get_named_gpio(pdev->dev.of_node, "AUDIO_DEBUG", 0);
@@ -3338,6 +3350,9 @@ static int msm8x16_setup_hs_jack(struct platform_device *pdev,
 	}
 	/*steve_chen --*/
 	#endif
+<<<<<<< HEAD
+>>>>>>> ec82cb5... Import ZC550KL sound drivers
+=======
 >>>>>>> ec82cb5... Import ZC550KL sound drivers
 	pdata->us_euro_gpio = of_get_named_gpio(pdev->dev.of_node,
 					"qcom,cdc-us-euro-gpios", 0);

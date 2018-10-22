@@ -46,7 +46,10 @@
 #include "msm8x16_wcd_registers.h"
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> ec82cb5... Import ZC550KL sound drivers
 #ifdef CONFIG_ASUS_ZC550KL_PROJECT
 //mei_huang +++ enable speaker not need to enable mic
 extern int speaker_run;
@@ -4406,14 +4409,20 @@ static const struct snd_soc_dapm_route audio_map[] = {
 	{"MIC BIAS Internal1", NULL, "MICBIAS_REGULATOR"},
 	{"MIC BIAS Internal2", NULL, "MICBIAS_REGULATOR"},
 <<<<<<< HEAD
+<<<<<<< HEAD
 #if defined(CONFIG_MACH_LONGCHEER) || defined(CONFIG_MACH_SPIRIT) || defined(CONFIG_MACH_T86519A1)
 	{"MIC BIAS Internal3", NULL, "MICBIAS_REGULATOR"},
 #endif
 =======
+=======
+>>>>>>> ec82cb5... Import ZC550KL sound drivers
 	{"MIC BIAS Internal2", NULL, "MICBIAS_REGULATOR"},
 	//mei_huang +++ power on micbias3
 	{"MIC BIAS Internal3", NULL, "MICBIAS_REGULATOR"},
 	//mei_huang ---
+<<<<<<< HEAD
+>>>>>>> ec82cb5... Import ZC550KL sound drivers
+=======
 >>>>>>> ec82cb5... Import ZC550KL sound drivers
 	{"MIC BIAS External", NULL, "MICBIAS_REGULATOR"},
 	{"MIC BIAS External2", NULL, "MICBIAS_REGULATOR"},
