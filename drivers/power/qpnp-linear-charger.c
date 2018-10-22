@@ -1291,6 +1291,8 @@ static int get_prop_charge_type(struct qpnp_lbc_chip *chip)
 =======
 extern int asus_battery_update_status(void);
 #ifdef CONFIG_ASUS_ZC550KL_PROJECT
+<<<<<<< HEAD
+=======
 static int get_prop_batt_status(struct qpnp_lbc_chip *chip)
 {
 	int rc;
@@ -1333,6 +1335,31 @@ static int get_prop_batt_status(struct qpnp_lbc_chip *chip)
 
 	return POWER_SUPPLY_STATUS_DISCHARGING;
 }
+<<<<<<< HEAD
+#else
+>>>>>>> a323720... drivers/power/qpnp-linear-charger:Import ZC550KL changes
+static int get_prop_batt_status(struct qpnp_lbc_chip *chip)
+{
+	int rc;
+	u8 reg_val;
+
+	if (qpnp_lbc_is_usb_chg_plugged_in(chip) && chip->chg_done)
+		return POWER_SUPPLY_STATUS_FULL;
+
+	rc = qpnp_lbc_read(chip, chip->chgr_base + INT_RT_STS_REG,
+				&reg_val, 1);
+	if (rc) {
+		pr_err("Failed to read interrupt sts rc= %d\n", rc);
+		return POWER_SUPPLY_CHARGE_TYPE_NONE;
+	}
+
+	if (reg_val & FAST_CHG_ON_IRQ)
+		return POWER_SUPPLY_STATUS_CHARGING;
+
+	return POWER_SUPPLY_STATUS_DISCHARGING;
+}
+=======
+>>>>>>> a323720... drivers/power/qpnp-linear-charger:Import ZC550KL changes
 #endif
 static int get_prop_current_now(struct qpnp_lbc_chip *chip)
 {
@@ -1624,7 +1651,10 @@ static int qpnp_batt_property_is_writeable(struct power_supply *psy,
  * b. disable charging
  */
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> a323720... drivers/power/qpnp-linear-charger:Import ZC550KL changes
 #ifdef CONFIG_ASUS_ZC550KL_PROJECT
 void smb358_update_aicl_work(int time)
  {
@@ -1633,6 +1663,9 @@ void smb358_update_aicl_work(int time)
 #else
 extern void smb358_update_aicl_work(int time);
 #endif
+<<<<<<< HEAD
+>>>>>>> a323720... drivers/power/qpnp-linear-charger:Import ZC550KL changes
+=======
 >>>>>>> a323720... drivers/power/qpnp-linear-charger:Import ZC550KL changes
 static int qpnp_batt_power_set_property(struct power_supply *psy,
 				enum power_supply_property psp,
